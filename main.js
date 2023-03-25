@@ -19,10 +19,11 @@ async function getISS() {
     const data = await response.json();
     const {latitude, longitude, velocity} = data;
 
-    if (fistTime){
-        map.setView([latitude, longitude], 5)
-        fistTime = false;        
-    }
+    map.setView([latitude, longitude], 5)
+    // if (fistTime){
+    //     map.setView([latitude, longitude], 5)
+    //     fistTime = false;        
+    // }
     marker.setLatLng([latitude, longitude])
     document.getElementById('lat').textContent = latitude.toFixed(2);
     document.getElementById('lon').textContent = longitude.toFixed(2);
